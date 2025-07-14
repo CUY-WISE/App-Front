@@ -1,0 +1,65 @@
+<div class="grid-container" *ngIf="isBrowser">
+  <!-- Distribución de Razas -->
+  <div class="card card-1 card-tall">
+    <div>
+      <h3>Distribución de Razas</h3>
+      <div echarts [options]="chartDistribucionRazas" class="responsive-chart"></div>
+    </div>
+  </div>
+
+  <!-- Animales Activos vs Inactivos -->
+  <div class="card card-2 card-tall">
+    <div>
+      <h3>Animales Activos vs Inactivos</h3>
+      <div echarts [options]="chartActivosInactivos" class="responsive-chart"></div>
+    </div>
+  </div>
+
+  <!-- Evolución del Peso por Animal -->
+  <div class="card card-3">
+    <div>
+      <h3>Evolución del Peso por Animal</h3>
+      <div echarts [options]="chartEvolucionPeso" class="responsive-chart"></div>
+    </div>
+  </div>
+
+  <!-- Eventos por Tipo -->
+  <div class="card card-4">
+    <div>
+      <h3>Eventos por Tipo</h3>
+      <div echarts [options]="chartEventosTipo" class="responsive-chart"></div>
+    </div>
+  </div>
+
+  <!-- Mediciones por Animal -->
+  <div class="card card-5 card-tall">
+    <div>
+      <h3>Mediciones por Animal</h3>
+      <div echarts [options]="chartMedicionesAnimal" class="responsive-chart"></div>
+    </div>
+  </div>
+
+  <!-- Registro por Mes/Año -->
+  <div class="card card-6 card-tall">
+    <div>
+      <h3>Registro por Mes/Año</h3>
+      <div echarts [options]="chartAnimalesMes" class="responsive-chart"></div>
+    </div>
+  </div>
+
+  <!-- Relación Peso vs Fecha -->
+  <div class="card card-7 card-tall">
+    <div>
+      <h3>Relación Peso vs Fecha</h3>
+      <div echarts [options]="chartRelacionPesoFecha" class="responsive-chart"></div>
+    </div>
+  </div>
+
+  <!-- Promedio de Peso por Raza -->
+  <div class="card card-8">
+    <div>
+      <h3>Promedio de Peso por Raza</h3>
+      <div echarts [options]="chartPromedioPesoRaza" class="responsive-chart"></div>
+    </div>
+  </div>
+</div>

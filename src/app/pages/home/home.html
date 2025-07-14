@@ -1,0 +1,83 @@
+<mat-sidenav-container class="sidenav-container">
+  <!-- Sidebar -->
+  <mat-sidenav 
+    #sidenav 
+    class="sidenav" 
+    fixedInViewport
+    [attr.role]="'navigation'"
+    [mode]="isHandset ? 'over' : 'side'"
+    [opened]="!isHandset">
+    
+    <!-- Header del Sidebar -->
+    <div class="sidenav-header">
+      <div class="logo-container">
+        <img src="/images/logo.webp" alt="CuyWise Logo" class="logo">
+        <span class="logo-text">CUYWISE</span>
+      </div>
+    </div>
+
+    <!-- Menú Principal -->
+    <mat-nav-list class="nav-list">
+      <mat-list-item 
+        *ngFor="let item of menuItems" 
+        class="nav-item"
+        [routerLink]="item.route"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon matListIcon>{{item.icon}}</mat-icon>
+        <span matLine>{{item.label}}</span>
+      </mat-list-item>
+    </mat-nav-list>
+
+    <div class="spacer"></div>
+
+    <!-- Elementos del fondo -->
+    <mat-nav-list class="bottom-nav-list">
+      <mat-list-item class="nav-item bottom-item">
+        <a href="https://github.com/BryanSagbay/Project-CuyWise.git" target="_blank" class="nav-link">
+          <mat-icon matListIcon>description</mat-icon>
+          <span matLine>Documentación</span>
+        </a>
+      </mat-list-item>
+      <mat-list-item class="nav-item bottom-item">
+        <a href="https://github.com/BryanSagbay/Project-CuyWise/blob/master/acerca-del-proyecto/acerca-del-proyecto.md" target="_blank" class="nav-link">
+          <mat-icon matListIcon>info</mat-icon>
+          <span matLine>Acerca del proyecto</span>
+        </a>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Contenido Principal -->
+  <mat-sidenav-content class="main-content">
+    <!-- Toolbar para móvil -->
+    <mat-toolbar *ngIf="isHandset" class="mobile-toolbar">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="toggleSidenav()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class="toolbar-title">CUYWISE</span>
+    </mat-toolbar>
+
+    <!-- Navbar superior dinámico -->
+    <div class="top-navbar">
+      <div class="breadcrumb-container">
+        <span class="breadcrumb-muted">Pages</span>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">{{ currentPage }}</span>
+      </div>
+      <div class="top-navbar-icons">
+        <mat-icon class="top-icon">settings</mat-icon>
+        <mat-icon class="top-icon">account_circle</mat-icon>
+      </div>
+    </div>
+
+    <!-- Contenido dinámico según ruta -->
+    <div class="content-container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

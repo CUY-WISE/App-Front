@@ -1,0 +1,76 @@
+/* Estilo principal de la tabla */
+.demo-table {
+  width: 100%;
+  min-width: 600px;
+  border-radius: 12px;
+  background-color: white; /* Fondo blanco para toda la tabla */
+  overflow-x: auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Cabecera: blanca, sin fondo café */
+.mat-mdc-header-cell {
+  background-color: white !important;
+  color: #333;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 13px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Celdas */
+.mat-mdc-row .mat-mdc-cell {
+  background-color: white;
+  color: #444;
+  font-size: 14px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease;
+  word-break: break-word;
+}
+
+/* Hover visual */
+.mat-mdc-row:hover .mat-mdc-cell {
+  background-color: #f5f5f5;
+}
+
+/* Fila clickeada */
+.demo-row-is-clicked {
+  background-color: #e3f2fd;
+  font-weight: bold;
+}
+
+/* Íconos de estado */
+.icon-active {
+  color: #4caf50;
+}
+
+.icon-inactive {
+  color: #f44336;
+}
+
+/* Log visual de clics */
+.click-log {
+  margin-top: 20px;
+  font-family: Roboto, sans-serif;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .demo-table {
+    min-width: unset;
+    display: block;
+    overflow-x: auto;
+  }
+
+  .mat-mdc-header-cell,
+  .mat-mdc-cell {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .click-log {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,41 @@
+<div class="mat-elevation-z8 table-container">
+  <table mat-table [dataSource]="dataSource" class="custom-table" matSort>
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+      <td mat-cell *matCellDef="let animal">{{ animal.id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
+      <td mat-cell *matCellDef="let animal">{{ animal.nombre }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="raza">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Raza</th>
+      <td mat-cell *matCellDef="let animal">{{ animal.raza }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="criadero">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Criadero</th>
+      <td mat-cell *matCellDef="let animal">{{ animal.criadero }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="fecha_registro">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha</th>
+      <td mat-cell *matCellDef="let animal">{{ animal.fecha_registro }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="activo">
+      <th mat-header-cell *matHeaderCellDef>Activo</th>
+      <td mat-cell *matCellDef="let animal">
+        <mat-icon [ngClass]="animal.activo ? 'icon-active' : 'icon-inactive'">
+          {{ animal.activo ? 'check_circle' : 'cancel' }}
+        </mat-icon>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
